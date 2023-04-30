@@ -12,7 +12,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route element={<Layout />}>
-            <Route path='/' element={<Home />} />
+            <Route path='coctail-bar-app/' element={<Home />} />
             <Route path='/:id' element={<CoctailDitails />} />
             <Route path='/about' element={<About />} />
           </Route>
