@@ -44,13 +44,16 @@
 
 .details__text{
   margin: 10px 0;
+  color: wheat;
 }
 
 .details__span{
   border-bottom: 2px solid #041c32;
   outline-offset: 4px;
   padding-bottom: 2px;
-  background-color: #b3ffae;
+  background-color: #cb96f3;
+  border-radius: 4px;
+  padding: 5px 5px;
 }
 
 .details__btn{
