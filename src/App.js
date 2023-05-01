@@ -5,6 +5,7 @@ import Layout from "./Components/Layout/Layout"
 import About from "./Pages/About/About"
 import Home from "./Pages/Home/Home"
 
+
 export const AppContext = createContext()
 function App() {
   return (
