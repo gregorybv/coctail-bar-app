@@ -9,12 +9,10 @@ const Home = () => {
 
   return (
     <div className='container'>
-      {console.log("render HOME")}
       <div className='home'>
         <h3 className='home__title'>Search coctails</h3>
         <SearchForm />
         <div className='home__content'>
-          {/* Sort by alcoholic */}
           <div className='home__block'>
             <p className='home__text'>Sort by alcohol:</p>
             <select
@@ -29,7 +27,6 @@ const Home = () => {
             </select>
           </div>
           <div className='home__block'>
-            {/* Sort by category */}
             <p className='home__text'>Sort by category:</p>
             <select
               className='home__select'
