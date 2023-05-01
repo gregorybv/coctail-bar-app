@@ -4,7 +4,7 @@ import './loader.css'
 const Loader = () => {
   return (
     <div className="loader">
-      <div class='loader__item'></div>
+      <div className='loader__item'></div>
     </div>
   )
 }
