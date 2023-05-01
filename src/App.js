@@ -1,6 +1,6 @@
 import { createContext } from "react"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import CoctailDitails from "./Components/СoctailDetails/CoctailDetails"
+import CoctailDetails from "./Components/СoctailDetails/CoctailDetails"
 import Layout from "./Components/Layout/Layout"
 import About from "./Pages/About/About"
 import Home from "./Pages/Home/Home"
@@ -13,7 +13,7 @@ function App() {
         <Routes>
           <Route element={<Layout />}>
             <Route path='coctail-bar-app/' element={<Home />} />
-            <Route path='/:id' element={<CoctailDitails />} />
+            <Route path='/:id' element={<CoctailDetails />} />
             <Route path='/about' element={<About />} />
           </Route>
         </Routes>
