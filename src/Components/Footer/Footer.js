@@ -9,9 +9,6 @@ const Footer = () => {
         <h2 className='footer__title'>BG Bar🍸</h2>
       </Link>
       <ul className='footer__list'>
-        <Link to='/' className='footer__link'>
-          Home
-        </Link>
         <Link to='/about' className='footer__link'>
           About
         </Link>
