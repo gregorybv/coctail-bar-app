@@ -10,9 +10,6 @@ const Navbar = () => {
           <h2 className='navbar__title'>BG Bar🍸</h2>
         </Link>
         <ul className='navbar__list'>
-          <Link to='/' className='navbar__link'>
-            Home
-          </Link>
           <Link to='/about' className='navbar__link'>
             About
           </Link>
