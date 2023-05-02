@@ -1,97 +1,97 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react"
 
 // created context
-const AppContext = createContext();
+const AppContext = createContext()
 
 // base url
-const url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
+const url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s="
 
 // provider component
 const AppProvider = ({ children }) => {
-  const [data, setData] = useState([]);
-  const [filteredData, setFilteredData] = useState(data);
-  const [loading, setLoading] = useState(true);
-  const [SingleCoctail, setSingleCoctail] = useState([]);
-  const [term, setTerm] = useState("");
-  const [uniqueCategories, setUniqueCategories] = useState([]);
-  const [filters, setFilters] = useState({ category: "All", alcohol: "All" });
+  const [data, setData] = useState([])
+  const [filteredData, setFilteredData] = useState(data)
+  const [loading, setLoading] = useState(true)
+  const [SingleCoctail, setSingleCoctail] = useState([])
+  const [term, setTerm] = useState("")
+  const [uniqueCategories, setUniqueCategories] = useState([])
+  const [filters, setFilters] = useState({ category: "All", alcohol: "All" })
 
   // fuction for data fetching
   const fetchData = async (term) => {
-    term ? (term = term) : (term = "x");
-    setLoading(true);
+    term ? (term = 1) : (term = "x")
+    setLoading(true)
     try {
-      const resp = await fetch(`${url}${term}`);
-      const data = await resp.json();
-      setData(data.drinks || []);
-      setFilteredData(data.drinks || []);
-      setLoading(false);
+      const resp = await fetch(`${url}${term}`)
+      const data = await resp.json()
+      setData(data.drinks || [])
+      setFilteredData(data.drinks || [])
+      setLoading(false)
     } catch (err) {
-      setLoading(false);
-      console.error(err);
+      setLoading(false)
+      console.error(err)
     }
-  };
+  }
 
   // fetch single coctail
   const fetchSingleCoctail = async (id) => {
-    setLoading(true);
+    setLoading(true)
     try {
       const response = await fetch(
         `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`
-      );
-      const data = await response.json();
-      setSingleCoctail(data.drinks);
-      setLoading(false);
+      )
+      const data = await response.json()
+      setSingleCoctail(data.drinks)
+      setLoading(false)
     } catch (err) {
-      console.error(err);
-      setLoading(false);
+      console.error(err)
+      setLoading(false)
     }
-  };
+  }
 
   // undading filters state
   const onFilterChange = (event) => {
-    const { name, value } = event.target;
-    setFilters({ ...filters, [name]: value });
-  };
+    const { name, value } = event.target
+    setFilters({ ...filters, [name]: value })
+  }
 
   // filter coctails
   const filterCoctails = () => {
-    let temp = [...data];
+    let temp = [...data]
 
     if (filters.category !== "All") {
       temp = temp.filter((item) => {
-        return item.strCategory === filters.category;
-      });
+        return item.strCategory === filters.category
+      })
     }
     if (filters.alcohol !== "All") {
       temp = temp.filter((item) => {
-        return item.strAlcoholic === filters.alcohol;
-      });
+        return item.strAlcoholic === filters.alcohol
+      })
     }
-    setFilteredData(temp);
-  };
+    setFilteredData(temp)
+  }
 
   //function to get unique categories
   const getUniqueCategories = () => {
     const allCategories = data?.map((coctail) => {
-      return coctail.strCategory;
-    });
-    const uniqueCategories = new Set(allCategories);
-    return [...uniqueCategories];
-  };
+      return coctail.strCategory
+    })
+    const uniqueCategories = new Set(allCategories)
+    return [...uniqueCategories]
+  }
 
   // call filter function every time filters changes
   useEffect(() => {
-    filterCoctails();
-  }, [filters]);
+    filterCoctails()
+  }, [filters])
 
   useEffect(() => {
-    setUniqueCategories(getUniqueCategories());
-  }, [term, filteredData, data]);
+    setUniqueCategories(getUniqueCategories())
+  }, [term, filteredData, data])
 
   useEffect(() => {
-    setFilters({ category: "All", alcohol: "All" });
-  }, [term]);
+    setFilters({ category: "All", alcohol: "All" })
+  }, [term])
   return (
     <AppContext.Provider
       value={{
@@ -114,12 +114,12 @@ const AppProvider = ({ children }) => {
     >
       {children}
     </AppContext.Provider>
-  );
-};
+  )
+}
 
 // costum hook
 export const useGlobalContext = () => {
-  return useContext(AppContext);
-};
+  return useContext(AppContext)
+}
 
-export { AppContext, AppProvider };
+export { AppContext, AppProvider }
