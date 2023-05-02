@@ -7,6 +7,22 @@
   padding: 20px;
 }
 
+.about__btn{
+  width: 150px;
+  margin-inline: auto;
+  background-color: #0a2647;
+  color: white;
+  border: none;
+  padding: 5px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.about__btn:hover{
+  color: #0a2647;
+  background-color: wheat;
+}
+
 .about__title{
   margin: 20px auto;
   color: rgb(249, 189, 79);
