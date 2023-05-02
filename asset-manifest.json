@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/coctail-bar-app/static/css/main.c6caa3c6.css",
-    "main.js": "/coctail-bar-app/static/js/main.9989a89a.js",
+    "main.css": "/coctail-bar-app/static/css/main.8d731a98.css",
+    "main.js": "/coctail-bar-app/static/js/main.8b3f4531.js",
     "index.html": "/coctail-bar-app/index.html",
-    "main.c6caa3c6.css.map": "/coctail-bar-app/static/css/main.c6caa3c6.css.map",
-    "main.9989a89a.js.map": "/coctail-bar-app/static/js/main.9989a89a.js.map"
+    "main.8d731a98.css.map": "/coctail-bar-app/static/css/main.8d731a98.css.map",
+    "main.8b3f4531.js.map": "/coctail-bar-app/static/js/main.8b3f4531.js.map"
   },
   "entrypoints": [
-    "static/css/main.c6caa3c6.css",
-    "static/js/main.9989a89a.js"
+    "static/css/main.8d731a98.css",
+    "static/js/main.8b3f4531.js"
   ]
 }
