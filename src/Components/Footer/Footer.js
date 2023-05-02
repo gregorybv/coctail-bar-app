@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className='footer'>
       <Link to='/'>
-        <h2 className='footer__title'>BG Bar🍸</h2>
+        <h2 className='footer__title'>By BG-coding 2023</h2>
       </Link>
       <ul className='footer__list'>
         <Link to='/about' className='footer__link'>
