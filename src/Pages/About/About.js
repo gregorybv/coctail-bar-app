@@ -1,10 +1,17 @@
-import React from "react";
-import './about.css'
+import React from "react"
+import "./about.css"
+import { useNavigate } from "react-router-dom"
 
 const About = () => {
+  const navigate = useNavigate()
+
   return (
-    <div className="about container">
-      <h2 className="about__title">About This Bar</h2>
+    <div className='about container'>
+      <button className='about__btn' onClick={() => navigate(-1)}>
+        Back To Home
+      </button>
+
+      <h2 className='about__title'>About This Bar</h2>
       <p className='about__text'>
         Welcome to our cocktail bar! Immerse yourself in a world of taste and
         creativity as our mixologists craft the perfect drink just for you.
@@ -20,7 +27,7 @@ const About = () => {
         company!
       </p>
     </div>
-  );
-};
+  )
+}
 
-export default About;
+export default About
